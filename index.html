@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f7f7f3">
+  <meta name="description" content="Stackly — thoughtfully chosen stays and local experiences, without the planning overwhelm.">
+  <title>Stackly — Travel, thoughtfully</title>
+  <link rel="icon" href="./assets/stackly-logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="preloader" id="preloader" role="status" aria-live="polite" aria-label="Loading Stackly">
+    <div class="preloader-grain"></div>
+    <div class="preloader-orbit orbit-one"></div>
+    <div class="preloader-orbit orbit-two"></div>
+    <div class="preloader-content">
+      <div class="preloader-topline"><span>STACKLY / TRAVEL, THOUGHTFULLY</span><span class="preloader-index">EST. 2027</span></div>
+      <div class="loader-mark"><img src="./assets/stackly-logo.jpg" alt="Stackly"></div>
+      <div class="loader-title">The world is <em>waiting.</em></div>
+      <p class="loader-subtitle">Curating your next somewhere…</p>
+      <div class="loader-progress-wrap">
+        <div class="loader-progress-track"><span class="loader-progress-fill" id="loaderProgressFill"></span></div>
+        <div class="loader-progress-meta"><span id="loaderStatus">PREPARING YOUR JOURNEY</span><span id="loaderPercent">00%</span></div>
+      </div>
+      <div class="preloader-bottomline"><span>FIND YOUR RHYTHM</span><span>✳</span><span>FOLLOW THE FEELING</span></div>
+    </div>
+    <div class="preloader-side-note">A BETTER WAY TO GET AWAY</div>
+  </div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="page-transition" id="pageTransition"></div>
+  <div id="app" class="app-shell">
+    <header class="site-header" id="siteHeader">
+      <a class="brand" href="#home" aria-label="Stackly home">
+        <img src="./assets/stackly-logo-light.png" alt="STACKLY" width="190" height="58">
+        <span class="brand-wordmark">STACKLY</span>
+      </a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#explore" data-nav="explore">Explore</a>
+        <a href="#stays" data-nav="stays">Places to stay</a>
+        <a href="#approach" data-nav="approach">Our approach</a>
+        <a href="#trips" data-nav="trips" class="nav-mytrips">My trips</a>
+      </nav>
+      <div class="header-actions">
+        <button class="header-icon-btn" id="searchToggle" aria-label="Open search" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
+        </button>
+        <button class="header-cta" data-route="search"><span class="cta-spark">✳</span> Plan your escape <span class="cta-arrow">↗</span></button>
+        <button class="profile-toggle" id="profileToggle" aria-label="Open account menu" aria-expanded="false">
+          <span class="profile-initial" id="profileInitial">S</span><span class="profile-chevron">⌄</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu"><span></span><span></span></button>
+      </div>
+      <div class="header-popover search-popover" id="searchPopover" aria-hidden="true">
+        <div class="popover-heading"><span>Find your somewhere</span><button class="popover-close" data-close-popover aria-label="Close search">×</button></div>
+        <form id="quickSearchForm" class="quick-search-form">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
+          <input id="quickSearchInput" placeholder="Search destinations, stays or guides…" autocomplete="off">
+          <button type="submit">Search ↗</button>
+        </form>
+        <p class="popover-label">POPULAR RIGHT NOW</p>
+        <div class="quick-chips"><button type="button" data-destination="Lisbon">Lisbon <span>↗</span></button><button type="button" data-destination="Cascais">Cascais <span>↗</span></button><button type="button" data-destination="Sintra">Sintra <span>↗</span></button></div>
+      </div>
+      <div class="header-popover profile-popover" id="profilePopover" aria-hidden="true">
+        <div class="profile-card-head"><span class="profile-initial large" id="popoverInitial">S</span><div><b id="popoverName">Welcome to Stackly</b><small id="popoverEmail">Sign in to manage your trips</small></div></div>
+        <div class="profile-menu-links" id="profileMenuLinks">
+          <button data-route="login"><span>↗</span> Log in <i>↗</i></button>
+          <button data-route="signup"><span>＋</span> Create an account <i>↗</i></button>
+        </div>
+      </div>
+    </header>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#explore">Explore <span>↗</span></a><a href="#stays">Places to stay <span>↗</span></a>
+      <a href="#approach">Our approach <span>↗</span></a><a href="#trips">My trips <span>↗</span></a>
+      <button data-route="login" class="btn btn-dark">Log in / Create account</button>
+    </div>
+    <main id="mainContent"></main>
+    <footer class="site-footer">
+      <div class="footer-brand"><img src="./assets/stackly-logo.jpg" alt="Stackly"><p>Thoughtfully chosen stays and local experiences, without the planning overwhelm.</p><small>© 2027 Stackly. All rights reserved.</small></div>
+      <div><h4>Explore</h4><a href="#explore">Lisbon & the Portuguese coast</a><a href="#stays">Stays</a><a href="#explore">Experiences</a><a href="#approach">Our approach</a></div>
+      <div><h4>Here to help</h4><a href="mailto:hello@stackly.example">Contact us</a><a href="#help">Booking help</a><a href="#help">Accessibility</a><a href="#help">Terms · Privacy · Cancellation</a></div>
+    </footer>
+  </div>
+  <div class="toast-stack" id="toastStack" aria-live="polite"></div>
+  <script src="./app.js"></script>
+</body>
+</html>
